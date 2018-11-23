@@ -31,14 +31,19 @@ public class MyAdapter  extends ArrayAdapter<Article> {
     public View getView(final int position,final View convertView, final ViewGroup parent) {
 
         View v = convertView;
-        Log.wtf("Position", String.valueOf(position));
+        Log.d("Position", String.valueOf(position));
         if (v == null) {
             LayoutInflater vi;
             vi = LayoutInflater.from(getContext());
             v = vi.inflate(R.layout.typical_view, null);
-           final Article value = items.get(position);
-            ((TextView)v.findViewById(R.id.typicalTextTitle)).setText(value.title);
         }
+        final Article value = items.get(position);
+        ((TextView)v.findViewById(R.id.title)).setText(value.getTitle());
+        ((TextView)v.findViewById(R.id.date)).setText(value.getPubDate());
+        ((TextView)v.findViewById(R.id.description)).setText("");
+        ((TextView)v.findViewById(R.id.address)).setText(value.getAddress());
+
+        
 
         //  String p = getItem(position);
         final int pos = position;
