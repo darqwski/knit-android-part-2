@@ -20,4 +20,20 @@ public class Article {
     public Article(String title) {
         this.title = title;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPubDate() {
+        return pubDate;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
 }
